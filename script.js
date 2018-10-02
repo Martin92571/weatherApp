@@ -77,6 +77,6 @@ function thunderstormCity(data){
             tCity.push(data);
         }
     })
-    
+    console.log(data.name);
     
 }
