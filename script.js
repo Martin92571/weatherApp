@@ -48,7 +48,7 @@ $(document).ready(function(){
 // }
 
 function city(){
-    window.tCity=[];
+    
     let counter=0;
     let cityCounterAjax=setInterval(function(){
         openWeather(cityId[counter++]);
@@ -71,12 +71,43 @@ function openWeather(cityIdentifier){
             console.log(msg);
         })
     }
+
 function thunderstormCity(data){
-    data.weather.map(function(a){
-        if(a.icon=="11d"||a.icon=="11n"){
-            tCity.push(data);
-        }
-    })
-    console.log(data.name);
+    if(data.sys.country=="US"){
+        
+    insertUpdate(data);
+    // data.weather.map(function(a){
     
+    //     if(a.icon=="11d"||a.icon=="11n"){
+    //         tCity.push(data);
+    //     }
+        
+    // });
+ }
+    
+    
+}
+function insertUpdate(data){
+    console.log(data);
+    let weather2,weather3=null;
+    if(data.weather[1]){
+         weather2=data.weather[1].icon;
+        if(data.weather[2]){
+             weather3=data.weather[2].icon;
+        }
+    }
+    
+    let server=$.ajax({
+        url:"http://localhost/naturVet/weatherApp/php/cityUpdate.php?action=insert",
+        method:"POST",
+        data:{'city_id':data.id,'name':data.name,'lat':data.coord.lat,'long':data.coord.lon,
+              'weather1':data.weather[0].icon,'weather2':weather2,'weather3':weather3},
+        dataType:"json"
+    });
+    server.done(function(data){
+        console.log(data);
+    });
+    server.fail(function(msg){
+        console.log(msg);
+    })
 }
