@@ -1,6 +1,8 @@
 $(document).ready(function(){
     // city();
-    allUpdate();
+    var amount=0;
+    cycle();
+    
     // openWeather();
 });
 
@@ -47,7 +49,16 @@ $(document).ready(function(){
 //     console.log(data);
 
 // }
-
+function cycle(){
+    cycleCount=0;
+    let cityCycle=setInterval(function(){
+        allUpdate();
+        cycleCount++;
+        if(cycleCount==24){
+            clearInterval(cityCycle);
+        }
+    },3900000);
+}
 function city(){
     
     let counter=0;
@@ -66,7 +77,7 @@ function allUpdate(){
         dataType:"json"
     });
     server.done(function(db){
-        
+        amount++;
         let updatecounter=0;
         let updateCityAjax=setInterval(function(){
             openWeather(db.data[updatecounter++].id,"update");
