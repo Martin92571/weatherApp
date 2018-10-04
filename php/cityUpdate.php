@@ -29,6 +29,10 @@ switch($_GET['action'] /*do a comparison switch on the get superglobal action*/)
 		//include the update.php file
 		include 'dataApi/update.php';
 		break;
+	case 'allUpdate':
+		//include the update.php file
+		include 'dataApi/allUpdate.php';
+		break;
 	
 }
 

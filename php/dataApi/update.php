@@ -15,13 +15,10 @@ if(isset($_POST['weather3'])){
 
 //check if you have all the data you need from the client-side call.  This should include the fields being changed and the ID of the student to be changed
 //if not, add an appropriate error to errors
-if(isset($id)&& isset($grade)&& isset($name)&& isset($course)){
-	if(isset($_SESSION['user'])){
-		$sql="UPDATE `user_student_data` SET `name`='{$name}',`grade`='{$grade}',`course`='{$course}' WHERE `id`='{$id}' ";
-	}else{
-		$sql="UPDATE `student_data` SET `name`='{$name}',`grade`='{$grade}',`course`='{$course}' WHERE `id`='{$id}' ";
-	}
+if(isset($id)&& isset($weather1)){
+	$sql="UPDATE `cities` SET `weather1`='{$weather1}',`weather2`='{$weather2}',`weather3`='{$weather3}' WHERE `id`='{$id}'";
 	
+
 	$result = mysqli_query($conn,$sql);
 	if(empty($result)){
 		$output['errors'][]='database errors';
@@ -29,11 +26,12 @@ if(isset($id)&& isset($grade)&& isset($name)&& isset($course)){
 		$output['success']=true;
 		
 		
+		
 	}else{
 		$output['errors'][]='update error';
 	}
 }else{
-	$output['errors'][]="missing input";
+	$output['errors'][]="missing input . $id . $weather1 .$weather2 . $weather3";
 }
 
 //write a query that updates the data at the given student ID.  
