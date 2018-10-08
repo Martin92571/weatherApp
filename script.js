@@ -1,3 +1,4 @@
+console.log("scripts");
 $(document).ready(function(){
     city();
     // openWeather();

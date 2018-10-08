@@ -25,7 +25,7 @@
 // "Daly City","Santa Maria","Hillsboro","Sandy Springs","Norwalk","Jurupa Valley","Lewisville","Greeley","Davie","Green Bay","Tyler","League City",
 // "Burbank","San Mateo","Wichita Falls","El Cajon","Rialto","Lakewood","Edison","Davenport","South Bend","Woodbridge","Las Cruces","Vista","Renton"
 // ,"Sparks","Clinton","Allen","Tuscaloosa","San Angelo","Vacaville"];
-
+console.log("city");
 
 let cityId=[
     5563397,
