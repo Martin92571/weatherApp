@@ -1,8 +1,8 @@
 console.log("scripts");
 $(document).ready(function(){
-    // city();
+    city();
     var amount=0;
-    cycle();
+    // cycle();
     
     // openWeather();
 });
