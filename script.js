@@ -83,7 +83,7 @@ function insertCity(data){
         }
     }
     var d = new Date();
-    var time=d.getHours()+":"+d.getMinutes();
+    var time=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
     
     let server=$.ajax({
         url:"http://localhost/naturVet/weatherApp/php/cityUpdate.php?action=insert",
@@ -115,8 +115,7 @@ function insertCity(data){
         }
     }
     var d = new Date();
-    var time=d.getHours()+":"+d.getMinutes();
-    
+    var time=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
     let server=$.ajax({
         url:"http://localhost/naturVet/weatherApp/php/cityUpdate.php?action=update",
         method:"POST",
