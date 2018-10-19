@@ -2,6 +2,7 @@
 
 $id=$_POST['city_id'];
 $weather1=$_POST['weather1'];
+$TimeStamp=$_POST['timeStamp'];
 if(isset($_POST['weather2'])){
 	$weather2=$_POST['weather2'];
 }else{
@@ -16,7 +17,7 @@ if(isset($_POST['weather3'])){
 //check if you have all the data you need from the client-side call.  This should include the fields being changed and the ID of the student to be changed
 //if not, add an appropriate error to errors
 if(isset($id)&& isset($weather1)){
-	$sql="UPDATE `cities` SET `weather1`='{$weather1}',`weather2`='{$weather2}',`weather3`='{$weather3}' WHERE `id`='{$id}'";
+	$sql="UPDATE `cities` SET `weather1`='{$weather1}',`weather2`='{$weather2}',`weather3`='{$weather3}',`TimeStamp`='{$TimeStamp}'' WHERE `id`='{$id}'";
 	
 
 	$result = mysqli_query($conn,$sql);

@@ -6,6 +6,7 @@ $name=$_POST['name'];
 $latitude=$_POST['lat'];
 $longitude=$_POST['long'];
 $weather1=$_POST['weather1'];
+$time=$_POST['timeStamp'];
 if(isset($_POST['weather2'])){
 	$weather2=$_POST['weather2'];
 }else{
@@ -21,8 +22,8 @@ if(isset($_POST['weather3'])){
 //check if you have all the data you need from the client-side call.  
 if(isset($id) && isset($name) && isset($latitude)&& isset($longitude) && isset($weather1)){
    
-$sql="INSERT INTO `cities`(`id`, `name`, `latitude`, `longitude`, `weather1`, `weather2`, `weather3`) 
-   VALUES ('{$id}','{$name}','{$latitude}','{$longitude}','{$weather1}','{$weather2}','{$weather3}')";   
+$sql="INSERT INTO `cities`(`id`, `TimeStamp`,`name`, `latitude`, `longitude`, `weather1`, `weather2`, `weather3`) 
+   VALUES ('{$id}','{$time}','{$name}','{$latitude}','{$longitude}','{$weather1}','{$weather2}','{$weather3}')";   
    
     
    $result = mysqli_query($conn,$sql);
