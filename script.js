@@ -54,7 +54,7 @@ function allUpdate(){
 }
 function openWeather(cityIdentifier,crud){
         let request=$.ajax({
-            url:"http://api.openweathermap.org/data/2.5/weather?id="+cityIdentifier+"&APPID=475bd3c9e82df38ab4f14f46e6130dc5 ",
+            url:"http://api.openweathermap.org/data/2.5/weather?id="+cityIdentifier+"&APPID="+apiKey,
             method:"GET",
             dataType:"json"
         });
