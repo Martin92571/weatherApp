@@ -59,6 +59,7 @@ function openWeather(cityIdentifier,crud){
             dataType:"json"
         });
         request.done(function(data){
+            console.log(data);
             if(crud==="insert"){
                 insertCity(data);
             }else if(crud==="update"){
