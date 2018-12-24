@@ -26,13 +26,14 @@ function city(){
         if(counter==cityId.length){
            clearInterval(cityCounterAjax); 
         }
-    },1200);
+    },10000);
     
 }
 function allUpdate(){
   
     let server=$.ajax({
-        url:"http://localhost/naturVet/weatherApp/php/cityUpdate.php?action=allUpdate",
+        url:"http://localhost/weatherApp/php/cityUpdate.php?action=allUpdate",
+        
         method:"GET",
         dataType:"json"
     });
@@ -86,7 +87,7 @@ function insertCity(data){
     var time=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
     
     let server=$.ajax({
-        url:"http://localhost/naturVet/weatherApp/php/cityUpdate.php?action=insert",
+        url:"http://localhost/weatherApp/php/cityUpdate.php?action=insert",
         method:"POST",
         data:{'city_id':data.id,'name':data.name,'lat':data.coord.lat,'long':data.coord.lon,
               'weather1':data.weather[0].icon,'weather2':weather2,'weather3':weather3,'timeStamp':time},
@@ -117,7 +118,7 @@ function insertCity(data){
     var d = new Date();
     var time=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
     let server=$.ajax({
-        url:"http://localhost/naturVet/weatherApp/php/cityUpdate.php?action=update",
+        url:"http://localhost/weatherApp/php/cityUpdate.php?action=update",
         method:"POST",
         data:{'city_id':data.id,'weather1':data.weather[0].icon,'weather2':weather2,'weather3':weather3,'timeStamp':time},
         dataType:"json"

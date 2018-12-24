@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
 //write a query that selects all the students from the database, all the data from each row
 $sql="SELECT `id` FROM `cities` WHERE 1";
 

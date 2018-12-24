@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
 
 $id=$_POST['city_id'];
 $name=$_POST['name'];

@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
 $id=$_POST['city_id'];
 $weather1=$_POST['weather1'];
 $TimeStamp=$_POST['timeStamp'];
