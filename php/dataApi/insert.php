@@ -24,8 +24,8 @@ if(isset($id) && isset($name) && isset($latitude)&& isset($longitude) && isset($
    
 $sql="INSERT INTO `cities`(`id`, `TimeStamp`,`name`, `latitude`, `longitude`, `weather1`, `weather2`, `weather3`) 
    VALUES ('{$id}','{$time}','{$name}','{$latitude}','{$longitude}','{$weather1}','{$weather2}','{$weather3}')";   
-   
-    
+ $output["sql"]=$sql;  
+ $output["conn"]=$conn;  
    $result = mysqli_query($conn,$sql);
    if(empty($result)){
 	   $output['errors'][]='database errors';

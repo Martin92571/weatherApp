@@ -1,8 +1,8 @@
 console.log("scripts");
 $(document).ready(function(){
-    city();
-    var amount=0;
-    // cycle();
+    // city();
+    
+    cycle();
     
     // openWeather();
 });
@@ -10,6 +10,7 @@ $(document).ready(function(){
 
 function cycle(){
     cycleCount=0;
+    allUpdate();
     let cityCycle=setInterval(function(){
         allUpdate();
         cycleCount++;
@@ -38,7 +39,7 @@ function allUpdate(){
         dataType:"json"
     });
     server.done(function(db){
-        amount++;
+       
         let updatecounter=0;
         let updateCityAjax=setInterval(function(){
             openWeather(db.data[updatecounter++].id,"update");
